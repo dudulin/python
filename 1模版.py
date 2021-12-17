@@ -18,8 +18,8 @@ def createExcel():
 
 
 def getUserAgent():
-    ua = user_agent('chrome')  # 浏览器版本模块
-    return ua
+    dd = user_agent('chrome')  # 浏览器版本模块
+    return dd
 
 
 ua = getUserAgent()
