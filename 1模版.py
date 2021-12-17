@@ -2,6 +2,7 @@
 # excel 生成函数
 import pandas as pd
 import numpy as np
+from fake_user_agent.main import user_agent
 
 
 def createExcel():
@@ -14,3 +15,12 @@ def createExcel():
     writer = pd.ExcelWriter('my.xlsx')
     data_df.to_excel(writer, float_format='%.5f')
     writer.save()
+
+
+def getUserAgent():
+    ua = user_agent('chrome')  # 浏览器版本模块
+    return ua
+
+
+ua = getUserAgent()
+print(ua, 'ua')
