@@ -200,35 +200,33 @@ move_dom(get_btn('//a[@id="J_Go"]'), 2.3)
 
 # =============================
 
-start_time = time.time()
 # 时间必须 修改
 different_time = get_time(
     hour=20,
     minute=0,
     second=0,
     microsecond=0)  # 244307 800000
-time.sleep(different_time)
-end_time = time.time()
-print(end_time - start_time, different_time, '时间差', datetime.datetime.now())
+# time.sleep(different_time)
+time.sleep(10)  # 测试使用
+print(different_time, '时间差', datetime.datetime.now())
 # action.click().perform()
 print('最后耗时0', datetime.datetime.now())
 get_btn('//a[@id="J_Go"]').click()
 
 print('最后耗时1', datetime.datetime.now())
-driver.implicitly_wait(5)
+driver.implicitly_wait(5)  # 这种方法需要等页面加载完 太慢了
 try:
     print('最后耗时2', datetime.datetime.now())
 
     # 执行 提交按钮
-    driver.find_element(By.XPATH, '//div/a[@class="go-btn"]').click()
+    # driver.find_element(By.XPATH, '//div/a[@class="go-btn"]').click()
     print(666666666666666666666)
-    cds = time.time()
-    print(cds - start_time, '最后耗时3', datetime.datetime.now())
+    print('最后耗时3', datetime.datetime.now())
 except Exception as e:
     print(e)
 
 
-time.sleep(80)
+time.sleep(180)
 
-driver.quit()
+# driver.quit()
 # driver.close()
