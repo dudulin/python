@@ -6,7 +6,6 @@ from selenium.webdriver.chrome.service import Service
 import time
 
 
-
 #    写法过时  executable_path 不适用
 # wb = webdriver.Chrome(executable_path=r'chromedriver/chromedriver.exe')
 # s = Service(r'chromedriver/chromedriver.exe')  # 驱动器路径
