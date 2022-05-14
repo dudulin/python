@@ -62,7 +62,6 @@ def create_chrome_driver(flag):
                 "source": js})
         return fire_driver
 
-
 driver = create_chrome_driver('chrome')
 action = ActionChains(driver)
 driver.get('https://taobao.com/')
