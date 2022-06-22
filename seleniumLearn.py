@@ -12,7 +12,8 @@ os.system("chcp 65001")
 
 # 有权限问题 操作不了
 # os.system(
-#     r'cd C:\Program Files (x86)\Google\Chrome\Application && chrome.exe --remote-debugging-port=9222 --user-data-dir=“D:\auto”')
+# r'cd C:\Program Files (x86)\Google\Chrome\Application && chrome.exe
+# --remote-debugging-port=9222 --user-data-dir=“D:\auto”')
 
 
 # 常用的行为有：
@@ -31,14 +32,18 @@ os.system("chcp 65001")
 def create_dirver(config):
     if config['key'] == 'chrome':
         # 浏览器 通用配置
-        # https://sites.google.com/a/chromium.org/chromedriver/capabilities 配置网站
+        # https://sites.google.com/a/chromium.org/chromedriver/capabilities
+        # 配置网站
         options = webdriver.ChromeOptions()
 
         # options.add_argument('--incognito')  # 隐身模式（无痕模式）
 
-        options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")  # 调用原来的浏览器，不用再次登录即可重启
+        options.add_experimental_option(
+            "debuggerAddress",
+            "127.0.0.1:9222")  # 调用原来的浏览器，不用再次登录即可重启
         options.add_argument('--start-maximized')  # 最大化运行（全屏窗口）,不设置，取元素会报错
-        options.add_argument('blink-settings=imagesEnabled=false')  # 不加载图片, 提升速度
+        options.add_argument(
+            'blink-settings=imagesEnabled=false')  # 不加载图片, 提升速度
         chrome_driver = Chrome(options=options)
         return chrome_driver
 
@@ -48,14 +53,15 @@ action = ActionChains(driver)  # 绑定事件对象
 
 driver.get('https://www.1kkk.com/manhua-jp/')  # 打开网页
 time.sleep(5)
-# driver.maximize_window()
 
 executor_url = driver.command_executor._url
 session_id = driver.session_id
 
-print(session_id)
-print(executor_url)
+print(session_id, 'session_id')
+print(executor_url, 'executor_url')
 
 time.sleep(10)
+driver.maximize_window()
 
 driver.quit()  # 退出关闭
+print('结束')

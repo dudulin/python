@@ -28,4 +28,8 @@ d df @
 内容 
 </font>
 
+## 安装打包工具
+pip install pyinstaller
+
+pyinstaller -F taobao.py
 ---
