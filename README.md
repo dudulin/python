@@ -33,4 +33,4 @@ pip install pyinstaller
 
 pyinstaller -F taobao.py
 ---
-同步一下
+同步一下2
