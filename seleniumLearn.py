@@ -7,7 +7,7 @@ import time
 import cmd
 import os
 
-os.system("chcp 65001")
+# os.system("chcp 65001")
 
 
 # 有权限问题 操作不了
@@ -42,8 +42,7 @@ def create_dirver(config):
             "debuggerAddress",
             "127.0.0.1:9222")  # 调用原来的浏览器，不用再次登录即可重启
         options.add_argument('--start-maximized')  # 最大化运行（全屏窗口）,不设置，取元素会报错
-        options.add_argument(
-            'blink-settings=imagesEnabled=false')  # 不加载图片, 提升速度
+        options.add_argument('blink-settings=imagesEnabled=false')  # 不加载图片, 提升速度
         chrome_driver = Chrome(options=options)
         return chrome_driver
 

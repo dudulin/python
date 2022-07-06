@@ -8,6 +8,13 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 import datetime
+import os
+
+
+def open_local_browser():
+    path = 'cd C:/Program Files/Google/Chrome/Application'
+    action = 'chrome.exe --remote-debugging-port=9222 --user-data-dir=“D:auto”'
+    os.system('{} && {}'.format(path, action))
 
 
 def create_chrome_driver(flag):
@@ -61,6 +68,7 @@ def create_chrome_driver(flag):
             "Page.addScriptToEvaluateOnNewDocument", {
                 "source": js})
         return fire_driver
+
 
 driver = create_chrome_driver('chrome')
 action = ActionChains(driver)
