@@ -32,5 +32,13 @@ d df @
 pip install pyinstaller
 
 pyinstaller -F taobao.py
+<<<<<<< HEAD
 ---
-同步一下2
+
+npx extract-stealth-evasions stealth.min.js 下载
+
+npx extract-stealth-evasions
+12
+=======
+---
+>>>>>>> parent of 28347d1 (*)
